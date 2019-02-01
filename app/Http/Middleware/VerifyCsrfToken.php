@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+		//nao verificar se a rota comecar com cliente, evita referencia cruzada de outro site para aplicacao laravel
+        "/cliente*"
     ];
 }

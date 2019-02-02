@@ -43,18 +43,28 @@ class ClienteControlador extends Controller
 
     public function edit($id)
     {
-        //
+        return "Formulario para editar cliente com ID " . $id;
     }
 
 
+    //salvar os dados
     public function update(Request $request, $id)
     {
-        //
+
+        $s = "Atualizar cliente com id $id: ";
+        $s .= "Nome: " . $request->input('nome') . " e ";   //name do input e nome
+        $s .= "Idade: " . $request->input('idade');
+        return response($s, 200);
     }
 
 
     public function destroy($id)
     {
-        //
+        return response("Apagado cliente com id $id", 200);
+    }
+
+    public function requisitar(Request $request){
+        //receber via post
+        echo "nome: " . $request->input('nome');
     }
 }
